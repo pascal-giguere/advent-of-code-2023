@@ -1,5 +1,5 @@
 export default {
-  roots: ['<rootDir>', '<rootDir>/../../src'],
+  roots: ['<rootDir>', '<rootDir>/../src'],
   testMatch: ['**/*.test.ts'],
   moduleFileExtensions: ['ts', 'js', 'json'],
   transform: {

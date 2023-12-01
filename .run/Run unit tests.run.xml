@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run unit tests" type="JavaScriptTestRunnerJest">
-    <config-file value="$PROJECT_DIR$/test/unit/jest.config.ts" />
+    <config-file value="$PROJECT_DIR$/test/jest.config.ts" />
     <node-interpreter value="project" />
-    <node-options value="" />
     <jest-package value="yarn:package.json:jest" />
     <working-dir value="$PROJECT_DIR$" />
     <envs />
