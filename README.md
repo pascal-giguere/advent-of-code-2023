@@ -27,4 +27,4 @@ yarn test -t q1
 - Language: TypeScript 5.3
 - Environment: Node 20
 - Package manager: Yarn 4 (with PnP)
-- Testing framework: Jest
+- Testing framework: Jest 29
