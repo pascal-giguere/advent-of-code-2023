@@ -30,13 +30,16 @@ function parseGame(line: string): Game {
 }
 
 function parseSet(str: string): Set {
-  const redMatch = str.match(/(\d+) red/);
-  const redCubes = redMatch ? parseInt(redMatch[1]) : 0;
-  const greenMatch = str.match(/(\d+) green/);
-  const greenCubes = greenMatch ? parseInt(greenMatch[1]) : 0;
-  const blueMatch = str.match(/(\d+) blue/);
-  const blueCubes = blueMatch ? parseInt(blueMatch[1]) : 0;
-  return { redCubes, greenCubes, blueCubes };
+  const parseCubes = (color: 'red' | 'green' | 'blue'): number => {
+    const match = str.match(new RegExp(`(\\d+) ${color}`));
+    return match ? parseInt(match[1]) : 0;
+  };
+
+  return {
+    redCubes: parseCubes('red'),
+    greenCubes: parseCubes('green'),
+    blueCubes: parseCubes('blue'),
+  };
 }
 
 function isGamePossible(game: Game): boolean {

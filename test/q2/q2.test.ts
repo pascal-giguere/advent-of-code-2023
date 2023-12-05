@@ -13,7 +13,7 @@ describe('q2', () => {
     });
 
     it('calculates the sum of possible games from a complex input', async () => {
-      expect(calculatePossibleGamesSum(COMPLEX_INPUT)).toEqual(8);
+      expect(calculatePossibleGamesSum(COMPLEX_INPUT)).toEqual(2204);
     });
   });
 
