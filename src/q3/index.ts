@@ -1,5 +1,6 @@
 import { ParsedNumber } from "./ParsedNumber.ts";
 import { ParsedCharacter } from "./ParsedCharacter.ts";
+import { Gear } from "./Gear.ts";
 
 type ParsedInput = {
   numbers: ParsedNumber[];
@@ -13,7 +14,11 @@ export function calculatePartNumbersSum(input: string): number {
 }
 
 export function calculateGearRatiosSum(input: string): number {
-  return 0;
+  const parsed: ParsedInput = parseInput(input);
+  const gears: Gear[] = parsed.specialChars
+    .map((char) => Gear.fromCharacter(char, parsed.partNumbers))
+    .filter((gear) => gear !== undefined);
+  return gears.reduce((acc, gear) => acc + gear.gearRatio(), 0);
 }
 
 function parseInput(input: string): ParsedInput {
