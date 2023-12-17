@@ -26,27 +26,27 @@ export function calculateMinimumSetPowersSum(input: string): number {
 }
 
 function parseGames(input: string): Game[] {
-  const lines: string[] = input.trim().split('\n');
+  const lines: string[] = input.trim().split("\n");
   return lines.map(parseGame);
 }
 
 function parseGame(line: string): Game {
   const match = line.match(/^Game (\d+): (.*)$/);
   const number = parseInt(match[1]);
-  const sets: Set[] = match[2].split('; ').map(parseSet);
+  const sets: Set[] = match[2].split("; ").map(parseSet);
   return { number, sets };
 }
 
 function parseSet(str: string): Set {
-  const parseCubes = (color: 'red' | 'green' | 'blue'): number => {
+  const parseCubes = (color: "red" | "green" | "blue"): number => {
     const match = str.match(new RegExp(`(\\d+) ${color}`));
     return match ? parseInt(match[1]) : 0;
   };
 
   return {
-    redCubes: parseCubes('red'),
-    greenCubes: parseCubes('green'),
-    blueCubes: parseCubes('blue'),
+    redCubes: parseCubes("red"),
+    greenCubes: parseCubes("green"),
+    blueCubes: parseCubes("blue"),
   };
 }
 

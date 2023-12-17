@@ -10,12 +10,12 @@ const numbers: Record<string, number> = {
   nine: 9,
 };
 
-const NUMBER_REGEX = new RegExp(`(\\d)`, 'g');
-const NUMBER_AS_WORD_REGEX = new RegExp(`(?=(\\d|(?:${Object.keys(numbers).join('|')})))`, 'g');
+const NUMBER_REGEX = new RegExp(`(\\d)`, "g");
+const NUMBER_AS_WORD_REGEX = new RegExp(`(?=(\\d|(?:${Object.keys(numbers).join("|")})))`, "g");
 
 export function calculateCalibrationValueSum(input: string, config?: { parseNumbersAsWords?: boolean }): number {
   const parseNumbersAsWords: boolean = config?.parseNumbersAsWords ?? false;
-  const lines: string[] = input.trim().split('\n');
+  const lines: string[] = input.trim().split("\n");
   return lines.reduce((sum: number, line: string) => sum + extractCalibrationValue(line, parseNumbersAsWords), 0);
 }
 
