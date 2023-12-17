@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
+    "target": "es2022",
+    "module": "nodenext",
     "types": ["node", "jest"],
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
+    "lib": ["esnext"],
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
     "resolveJsonModule": true
   }
 }
