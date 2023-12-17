@@ -1,14 +1,33 @@
 import { ParsedNumber } from "./ParsedNumber.ts";
 import { ParsedCharacter } from "./ParsedCharacter.ts";
 
+type ParsedInput = {
+  numbers: ParsedNumber[];
+  partNumbers: ParsedNumber[];
+  specialChars: ParsedCharacter[];
+};
+
 export function calculatePartNumbersSum(input: string): number {
+  const parsed: ParsedInput = parseInput(input);
+  return parsed.partNumbers.reduce((acc, number) => acc + number.value, 0);
+}
+
+export function calculateGearRatiosSum(input: string): number {
+  return 0;
+}
+
+function parseInput(input: string): ParsedInput {
   const lines: string[] = input.trim().split("\n");
   const numbers: ParsedNumber[] = lines.map(parseNumbers).flat();
   const specialChars: ParsedCharacter[] = lines.map(parseSpecialChar).flat();
   const partNumbers = numbers.filter((number) =>
     specialChars.some((char) => number.isAdjacentToCoordinate(char.coordinates)),
   );
-  return partNumbers.reduce((acc, number) => acc + number.value, 0);
+  return {
+    numbers,
+    partNumbers,
+    specialChars,
+  };
 }
 
 function parseNumbers(line: string, lineIndex: number): ParsedNumber[] {
