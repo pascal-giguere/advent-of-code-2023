@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { calculateCalibrationValueSum } from "../../src/q1/index.js";
+import { calculateCalibrationValueSum } from "../../src/q1/index.ts";
 
 const SIMPLE_INPUT = fs.readFileSync(path.join(__dirname, "input-simple.txt"), "utf-8");
 const SIMPLE2_INPUT = fs.readFileSync(path.join(__dirname, "input-simple-2.txt"), "utf-8");

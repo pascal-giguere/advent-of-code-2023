@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { calculateMinimumSetPowersSum, calculatePossibleGamesSum } from "../../src/q2/index.js";
+import { calculateMinimumSetPowersSum, calculatePossibleGamesSum } from "../../src/q2/index.ts";
 
 const SIMPLE_INPUT = fs.readFileSync(path.join(__dirname, "input-simple.txt"), "utf-8");
 const COMPLEX_INPUT = fs.readFileSync(path.join(__dirname, "input-complex.txt"), "utf-8");
